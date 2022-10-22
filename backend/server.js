@@ -21,6 +21,7 @@ const {
   userRecipe,
   createRecipe,
   newestRecipes,
+  threenewestRecipes,
   likeRecipe,
   ratingRecipe,
   mainCategory,
@@ -114,6 +115,9 @@ app.get("/allRecipes", allRecipes);
 
 /* Get 50 newest recipes*/
 app.get("/newestRecipes", newestRecipes);
+
+/* Get 3 newest recipes*/
+app.get("/threenewestRecipes", threenewestRecipes);
 
 /* One users recipes */
 app.post("/userRecipe", userRecipe);

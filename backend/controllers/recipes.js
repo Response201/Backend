@@ -26,6 +26,23 @@ exports.newestRecipes = async (req, res) => {
   }
 };
 
+
+/* 3 newest Recipes */
+
+exports.threenewestRecipes = async (req, res) => {
+  try {
+    const response = await AllRecipes.find()
+      .sort({ createdAt: -1 })
+      .limit(3)
+      .exec();
+    res.status(201).json(response);
+  } catch (error) {
+    res.status(400).json({ response: error, success: false });
+  }
+};
+
+
+
 /* Filter out one user Recipes */
 
 exports.userRecipe = async (req, res) => {
