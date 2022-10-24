@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-app.use(cors());
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const fileUpload = require("express-fileupload");
@@ -22,7 +21,6 @@ const {
   userRecipe,
   createRecipe,
   newestRecipes,
-  threenewestRecipes,
   likeRecipe,
   ratingRecipe,
   mainCategory,
@@ -31,7 +29,8 @@ const {
   changeRecipe,
   followRecipts,
   deleteRecipe,
-  oneRecipe
+  oneRecipe,
+  threenewestRecipes
 } = require("./controllers/recipes");
 /* user */
 const {
@@ -68,7 +67,7 @@ mongoose.connect(
 );
 
 const port = process.env.PORT || 8080;
-
+app.use(cors());
 app.use(express.json());
 
 // Start
