@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+app.use(cors());
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const fileUpload = require("express-fileupload");
@@ -67,7 +68,7 @@ mongoose.connect(
 );
 
 const port = process.env.PORT || 8080;
-app.use(cors());
+
 app.use(express.json());
 
 // Start
