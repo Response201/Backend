@@ -274,8 +274,6 @@ exports.follow = async (req, res) => {
     const { username } = req.body;
     const { followThisUser } = req.params;
 
-   
-
     const findUser = await User.findOne({ username: followThisUser });
 
     const find = findUser.followers.filter((e) => {
