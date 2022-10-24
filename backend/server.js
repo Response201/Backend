@@ -6,7 +6,14 @@ const fileUpload = require("express-fileupload");
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+  origin: 'https://foodnary.netlify.app/',
+  optionsSuccessStatus: 200 // For legacy browser support
+}
+
+
+app.use(cors(corsOptions));
 app.use(
   fileUpload({
     useTempFiles: true
