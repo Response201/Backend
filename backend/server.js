@@ -12,7 +12,7 @@ const corsOptions = {
   optionsSuccessStatus: 200 // For legacy browser support
 }
 const corsOption = {
-  origin: 'https://localhost:3000/',
+  origin: 'http://localhost:3000/',
   optionsSuccessStatus: 200 // For legacy browser support
 }
 
