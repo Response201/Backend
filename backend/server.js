@@ -11,9 +11,13 @@ const corsOptions = {
   origin: 'https://foodnary.netlify.app/',
   optionsSuccessStatus: 200 // For legacy browser support
 }
+const corsOption = {
+  origin: 'https://localhost:3000/',
+  optionsSuccessStatus: 200 // For legacy browser support
+}
 
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions, corsOption));
 app.use(
   fileUpload({
     useTempFiles: true
