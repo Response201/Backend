@@ -29,7 +29,7 @@ const {
   followRecipts,
   deleteRecipe,
   oneRecipe,
-  threenewestRecipes
+  threenewestRecipes,
 } = require("./controllers/recipes");
 /* user */
 const {
@@ -145,11 +145,11 @@ app.post("/subCatergory", subCatergory);
 app.post("/createRecipe", authUser, createRecipe);
 
 /* change a Recipt */
-app.post("/:recipeId/changeRecipe", authUser, authRole, changeRecipe);
+app.post("/:recipeId/changeRecipe", authUser, changeRecipe);
 
 /* delete a recipe */
 
-app.post("/:recipeId/deleteRecipe", authUser, authRole, deleteRecipe);
+app.post("/:recipeId/deleteRecipe", authUser, deleteRecipe);
 
 /* get singel recipe */
 
