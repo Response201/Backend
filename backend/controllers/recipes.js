@@ -26,7 +26,6 @@ exports.newestRecipes = async (req, res) => {
   }
 };
 
-
 /* 3 newest Recipes */
 
 exports.threenewestRecipes = async (req, res) => {
@@ -40,8 +39,6 @@ exports.threenewestRecipes = async (req, res) => {
     res.status(400).json({ response: error, success: false });
   }
 };
-
-
 
 /* Filter out one user Recipes */
 
@@ -86,7 +83,13 @@ exports.followRecipts = async (req, res) => {
         recipesFollowing.push(recipes);
       }
 
-      res.status(201).json(recipesFollowing);
+      const y = await recipesFollowing.flat();
+
+      res.status(201).json(
+        y.sort((a, b) => {
+          return b.createdAt - a.createdAt;
+        })
+      );
     } else {
       res.status(400).json({
         message: "the users you follow have not create anny recipes yet"
