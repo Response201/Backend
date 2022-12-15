@@ -44,6 +44,10 @@ const {
   follow
 } = require("./controllers/user");
 
+/* coffee app */
+const {likeCoffee, newCoffee, postCoffee} = require("./controllers/coffeeApp")
+
+
 /* upload */
 
 const { uploadimg } = require("./controllers/upload");
@@ -73,6 +77,33 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Welcome to this API, it's used for Recipe-dictionary");
 });
+
+
+
+
+
+/* Coffee app */
+
+/* Create a new post*/
+
+app.post("/newCoffee", newCoffee )
+
+/* Get all posts*/
+
+app.get("/postCoffee", postCoffee
+  );
+
+/* update post if its get a like */
+
+app.post("/post/:postId/likeCoffee", likeCoffee )
+
+
+
+
+
+
+
+
 
 /* Recipe-dictionary-app */
 
