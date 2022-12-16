@@ -2,10 +2,7 @@ const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema;
 
 const todoSchema = new mongoose.Schema({
-  id: {
-    type: Date,
-    default: Date.now()
-  },
+ 
   title: String,
   description: String,
   project: String,

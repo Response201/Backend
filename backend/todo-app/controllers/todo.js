@@ -48,7 +48,7 @@ exports.changeTodo = async (req, res) => {
     const { id, status, type, done } = req.body;
 
     const response = await AllTodos.findOneAndUpdate(
-      { id: id },
+      { _id: id },
       {
         status: status,
         type: type,
