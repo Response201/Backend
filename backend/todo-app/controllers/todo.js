@@ -45,14 +45,17 @@ exports.createTodo = async (req, res) => {
 
 exports.changeTodo = async (req, res) => {
   try {
-    const { id, status, type, done } = req.body;
+    const { id, status, type, done, priority,what,who } = req.body;
 
     const response = await AllTodos.findOneAndUpdate(
       { _id: id },
       {
         status: status,
         type: type,
-        done: done
+        done: done,
+        priority:priority,
+        what:what,
+        who:who
       },
       {
         new: true
