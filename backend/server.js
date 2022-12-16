@@ -29,8 +29,8 @@ const {
   followRecipts,
   deleteRecipe,
   oneRecipe,
-  threenewestRecipes,
-} = require("./controllers/recipes");
+  threenewestRecipes
+} = require("./foodnary/controllers/recipes");
 /* user */
 const {
   register,
@@ -42,18 +42,21 @@ const {
   validateCode,
   changePassword,
   follow
-} = require("./controllers/user");
+} = require("./foodnary/controllers/user");
 
 /* coffee app */
-const {likeCoffee, newCoffee, postCoffee} = require("./controllers/coffeeApp")
-
+const {
+  likeCoffee,
+  newCoffee,
+  postCoffee
+} = require("./coffee-app/controllers/coffeeApp");
 
 /* upload */
 
-const { uploadimg } = require("./controllers/upload");
+const { uploadimg } = require("./foodnary/controllers/upload");
 
-const { authUser, authRole } = require("./middwares/auth");
-const imageUpload = require("./middwares/imageUpload");
+const { authUser, authRole } = require("./foodnary/middwares/auth");
+const imageUpload = require("./foodnary/middwares/imageUpload");
 const mongoUrl =
   process.env.MONGO_URL || "https://backend-recipe-ect.herokuapp.com";
 
@@ -78,32 +81,19 @@ app.get("/", (req, res) => {
   res.send("Welcome to this API, it's used for Recipe-dictionary");
 });
 
-
-
-
-
 /* Coffee app */
 
 /* Create a new post*/
 
-app.post("/newCoffee", newCoffee )
+app.post("/newCoffee", newCoffee);
 
 /* Get all posts*/
 
-app.get("/postCoffee", postCoffee
-  );
+app.get("/postCoffee", postCoffee);
 
 /* update post if its get a like */
 
-app.post("/post/:postId/likeCoffee", likeCoffee )
-
-
-
-
-
-
-
-
+app.post("/post/:postId/likeCoffee", likeCoffee);
 
 /* Recipe-dictionary-app */
 

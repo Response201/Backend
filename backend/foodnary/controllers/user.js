@@ -1,6 +1,9 @@
 const User = require("../models/User");
 const AllRecipes = require("../models/Recipes");
-const { validateEmail, validateLength } = require("../helpers/validation");
+const {
+  validateEmail,
+  validateLength
+} = require("../helpers/validation");
 const jwt = require("jsonwebtoken");
 const { now } = require("mongoose");
 const { generateToken } = require("../helpers/tokens");

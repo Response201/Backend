@@ -1,7 +1,6 @@
-const AllCoffes = require ("../models/CoffeeApp")
+const AllCoffes = require("../models/CoffeeApp");
 
-
- exports.postCoffee = async (req, res) => { 
+exports.postCoffee = async (req, res) => {
   try {
     const response = await AllCoffes.find()
       .sort({ createdAt: -1 })
@@ -11,12 +10,10 @@ const AllCoffes = require ("../models/CoffeeApp")
   } catch (error) {
     res.status(400).json({ response: error, success: false });
   }
-}
-  
-
+};
 
 exports.newCoffee = async (req, res) => {
-   const { message } = req.body;
+  const { message } = req.body;
 
   const messages = new AllCoffes({
     message
@@ -35,15 +32,9 @@ exports.newCoffee = async (req, res) => {
   } catch (error) {
     res.status(400).json({ response: error, success: false });
   }
-}
+};
 
-
-
-
-
-
-
-exports.likeCoffee= async (req, res) => {
+exports.likeCoffee = async (req, res) => {
   const { postId } = req.params;
 
   try {
@@ -69,4 +60,4 @@ exports.likeCoffee= async (req, res) => {
   } catch (error) {
     res.status(400).json({ response: error, success: false });
   }
-}
+};

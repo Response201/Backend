@@ -32,10 +32,9 @@ exports.authUser = async (req, res, next) => {
 exports.authRole = async (req, res, next) => {
   try {
     const { recipeId } = req.params;
-    let { role, username} = req.body;
+    let { role, username } = req.body;
     const recipeOwner = AllRecipes.findById({ recipeId });
-    if (role === "admin" || username === recipeOwner.username){
-      
+    if (role === "admin" || username === recipeOwner.username) {
       next();
     }
   } catch (error) {
