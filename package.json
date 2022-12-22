@@ -2,7 +2,7 @@
   "name": "foodnary",
   "version": "1.0.0",
   "scripts": {
-
+    "postinstall": "npm install --prefix backend"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
