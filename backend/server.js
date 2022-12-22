@@ -14,6 +14,10 @@ app.use(
 
 /* Routes */
 
+/* Portfolio */
+
+const {Send} = require("./portfolio/helper/constrollers/Send")
+
 /* Foodnary */
 /* recipes */
 const {
@@ -49,6 +53,10 @@ const { uploadimg } = require("./foodnary/controllers/upload");
 const { authUser, authRole } = require("./foodnary/middwares/auth");
 const imageUpload = require("./foodnary/middwares/imageUpload");
 
+
+
+
+
 /* todo-app */
 
 const {createTodo, postTodoList, changeTodo, deleteTodo} = require("./todo-app/controllers/todo");
@@ -59,6 +67,7 @@ const {
   newCoffee,
   postCoffee
 } = require("./coffee-app/controllers/coffeeApp");
+
 
 
 const mongoUrl =
@@ -84,6 +93,10 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Welcome to this API, it's used for Recipe-dictionary");
 });
+
+/* Portfolio */
+
+app.post("/send", Send)
 
 /* todo-app */
 
