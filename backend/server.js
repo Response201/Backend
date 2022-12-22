@@ -14,6 +14,10 @@ app.use(
 
 /* Routes */
 
+/* Portfolio */
+
+const {Send } = require("./portfolio/helper/constrollers/Send")
+
 /* Foodnary */
 /* recipes */
 const {
@@ -84,6 +88,10 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Welcome to this API, it's used for Recipe-dictionary");
 });
+
+/* Portfolio */
+
+app.post("/send", Send)
 
 /* todo-app */
 
