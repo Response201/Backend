@@ -2,9 +2,9 @@
   "name": "foodnary",
   "version": "1.0.0",
   "scripts": {
-    "client-install": "npm install --prefix ./client",
+    "client-install": "npm install --prefix ./backend",
     "install-all": "npm install && npm run client-install && npm run server-install",
-    "server-install": "npm install --prefix ./server"
+    "server-install": "npm install --prefix ./backend"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
